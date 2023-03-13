@@ -7,17 +7,18 @@ setHeadlessWhen(process.env.HEADLESS);
 setCommonPlugins();
 
 export const config: CodeceptJS.MainConfig = {
-  tests: './tests.ts',
+  tests: './step_definitions/steps.js',
   output: './output',
   helpers: {
     Puppeteer: {
-      url: 'http://www.quran.com',
+      url: 'https://www.quran.com',
       show: true,
       windowSize: '1200x900'
     }
   },
+ 
   include: {
-    I: './steps_file'
+    I: './step_definitions/steps.js'
   },
   name: 'BDD'
 
